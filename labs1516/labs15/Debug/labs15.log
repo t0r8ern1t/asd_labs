@@ -1,0 +1,4 @@
+﻿  labs15.cpp
+D:\git\asd_labs\labs15\labs15\labs15.cpp(27,29): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+D:\git\asd_labs\labs15\labs15\labs15.cpp(39,28): warning C4018: <: несоответствие типов со знаком и без знака
+  labs15.vcxproj -> D:\git\asd_labs\labs15\Debug\labs15.exe

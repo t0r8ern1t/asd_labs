@@ -3,15 +3,14 @@
 import random
 from itertools import islice
 
-#заполняем файл случайными 20 числами
-#пусть объем памяти позволяет нам хранить за раз только 10
+
 def fill_rand(name):
     f = open(name, 'w')
     for i in range(20):
         f.write(str(random.randint(1, 100)) + '\n')
     f.close()
 
-#merge sort и merge list - функции из предыдущей лабораторной
+
 def merge_sort(nums, start, end):
     if end - start > 1:
         mid = (start + end) // 2
@@ -48,8 +47,6 @@ def merge_list(nums, start, end):
 def multiphase_sort(name):
     f = open(name, 'r')
     i = 0
-    #берем из инпут-файла дважды по 10 элементов, сортируем
-    #и записываем в файлы 1 и 2
     for k in range(2):
         arr = []
         for j in range(10):
@@ -63,14 +60,10 @@ def multiphase_sort(name):
     f.close()
     f2.close()
 
-    #берем первую половину первого файла и первую - второго, сортируем, записываем в аутпут
-    #затем то же самое со вторыми половинами
-    #тк элементы в файлах 1 и 2 уже отсортированы, никаких путаниц не возникает
     for k in range(2):
         arr = []
         f1 = open('1.txt', 'r')
         f2 = open('2.txt', 'r')
-        #чтобы взять вторую половину файлов пропускаем первые строки
         if k == 1:
             for s in range(5):
                 f1.readline()
@@ -80,7 +73,6 @@ def multiphase_sort(name):
             arr.append(int(f2.readline()))
         merge_sort(arr, 0, len(arr))
         f = open('output.txt', 'a')
-        #записываем в аутпут
         print(k, arr)
         for j in range(10):
             f.write(str(arr[j])+'\n')
